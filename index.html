@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pusat Upload</title>
+<meta name="description" content="Upload video dan foto ke YouTube dan Instagram sekaligus, tanpa biaya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="config.js"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="plate">
+    <span class="rivet" aria-hidden="true"></span><span class="rivet" aria-hidden="true"></span>
+    <span class="rivet" aria-hidden="true"></span><span class="rivet" aria-hidden="true"></span>
+    <p class="plate-maker">CV Anugerah Sukses Group</p>
+    <h1>Pusat Upload</h1>
+    <dl class="plate-spec">
+      <div><dt>Tujuan</dt><dd>YouTube, Instagram</dd></div>
+      <div><dt>Biaya</dt><dd>Rp0</dd></div>
+      <div><dt>Server</dt><dd>Tidak ada</dd></div>
+    </dl>
+  </header>
+
+  <p class="notice" id="setupNotice" role="status" hidden></p>
+
+  <section class="step lockable" aria-labelledby="s1">
+    <h2 id="s1"><span class="num" aria-hidden="true">1</span>Hubungkan akun</h2>
+    <div class="accounts">
+      <div class="acct" id="acctYt">
+        <img class="avatar" id="ytAvatar" alt="" hidden>
+        <span class="avatar-fallback yt" id="ytAvatarFallback" aria-hidden="true">YT</span>
+        <div class="acct-body">
+          <p class="acct-name" id="ytName">YouTube</p>
+          <p class="acct-status" id="ytStatus">Belum terhubung</p>
+        </div>
+        <button type="button" class="btn ghost" id="ytConnect">Hubungkan</button>
+      </div>
+      <div class="acct" id="acctIg">
+        <img class="avatar" id="igAvatar" alt="" hidden>
+        <span class="avatar-fallback ig" id="igAvatarFallback" aria-hidden="true">IG</span>
+        <div class="acct-body">
+          <p class="acct-name" id="igName">Instagram</p>
+          <p class="acct-status" id="igStatus">Belum terhubung</p>
+          <label class="acct-pick" id="igPickWrap" hidden>
+            <span class="sr-only">Pilih akun Instagram</span>
+            <select id="igPick"></select>
+          </label>
+        </div>
+        <button type="button" class="btn ghost" id="igConnect">Hubungkan</button>
+      </div>
+    </div>
+    <p class="fine">Dengan menghubungkan YouTube, kamu menyetujui <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">Persyaratan Layanan YouTube</a> dan <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Kebijakan Privasi Google</a>.</p>
+  </section>
+
+  <section class="step lockable" aria-labelledby="s2">
+    <h2 id="s2"><span class="num" aria-hidden="true">2</span>Pilih file</h2>
+    <label class="drop" id="drop">
+      <input type="file" id="file" accept="video/*,image/jpeg,image/png,image/webp">
+      <span class="drop-main">Tarik video atau foto ke sini</span>
+      <span class="drop-sub">atau klik untuk memilih dari perangkat</span>
+    </label>
+    <p class="field-error" id="fileError" role="alert" hidden></p>
+    <div class="preview" id="preview" hidden>
+      <div class="media" id="media"></div>
+      <div class="fileinfo">
+        <p class="file-name" id="fileName"></p>
+        <p class="file-meta" id="fileMeta"></p>
+        <button type="button" class="btn ghost small" id="fileChange">Ganti file</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="step lockable" aria-labelledby="s3">
+    <h2 id="s3"><span class="num" aria-hidden="true">3</span>Isi detail</h2>
+
+    <fieldset class="dest" id="ytBox">
+      <legend><label class="toggle"><input type="checkbox" id="ytOn" checked> Kirim ke YouTube</label></legend>
+      <p class="dest-note" id="ytNote" hidden></p>
+      <div class="dest-body">
+        <label class="field">
+          <span class="label">Judul <span class="count" id="ytTitleCount">0/100</span></span>
+          <input type="text" id="ytTitle" maxlength="100" autocomplete="off">
+        </label>
+        <label class="field">
+          <span class="label">Deskripsi <span class="count" id="ytDescCount">0/5.000</span></span>
+          <textarea id="ytDesc" rows="5" maxlength="5000"></textarea>
+        </label>
+        <label class="field">
+          <span class="label">Tag <span class="help">pisahkan dengan koma</span></span>
+          <input type="text" id="ytTags" placeholder="dinamo, inverter, gearbox" autocomplete="off">
+        </label>
+        <div class="row">
+          <label class="field">
+            <span class="label">Visibilitas</span>
+            <select id="ytPrivacy">
+              <option value="public">Publik</option>
+              <option value="unlisted">Tidak publik (hanya yang punya link)</option>
+              <option value="private">Privat</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="label">Kategori</span>
+            <select id="ytCategory">
+              <option value="28">Sains &amp; Teknologi</option>
+              <option value="2">Otomotif</option>
+              <option value="26">Gaya &amp; Tutorial</option>
+              <option value="27">Pendidikan</option>
+              <option value="22">Orang &amp; Blog</option>
+            </select>
+          </label>
+        </div>
+        <label class="field">
+          <span class="label">Jadwal tayang <span class="help">kosongkan untuk langsung tayang</span></span>
+          <input type="datetime-local" id="ytSchedule">
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset class="dest" id="igBox">
+      <legend><label class="toggle"><input type="checkbox" id="igOn" checked> Kirim ke Instagram</label></legend>
+      <div class="dest-body">
+        <div class="field">
+          <span class="label" id="igTypeLabel">Jenis post</span>
+          <div class="seg" id="igType" role="radiogroup" aria-labelledby="igTypeLabel"></div>
+        </div>
+        <label class="field" id="igCaptionWrap">
+          <span class="label">Caption <span class="count" id="igCapCount">0/2.200</span></span>
+          <textarea id="igCaption" rows="5" maxlength="2200"></textarea>
+        </label>
+        <p class="dest-note" id="igStoryNote" hidden>Story dari API nggak bisa pakai caption, stiker, atau musik.</p>
+        <button type="button" class="link-btn" id="copyFromYt">Salin judul dan deskripsi YouTube ke caption</button>
+      </div>
+    </fieldset>
+  </section>
+
+  <section class="step" aria-labelledby="s4">
+    <h2 id="s4"><span class="num" aria-hidden="true">4</span>Kirim</h2>
+    <p class="hint" id="hint" role="alert" hidden></p>
+    <button type="button" class="btn primary" id="send" disabled>Upload sekarang</button>
+    <ul class="jobs" id="jobs" aria-live="polite"></ul>
+  </section>
+
+  <section class="history" aria-labelledby="hTitle">
+    <h2 id="hTitle">Riwayat upload</h2>
+    <ul id="history"></ul>
+  </section>
+
+  <footer class="foot">
+    <a href="privacy.html">Kebijakan privasi</a>
+    <a href="privacy.html#syarat">Syarat penggunaan</a>
+  </footer>
+</main>
+</body>
+</html>
