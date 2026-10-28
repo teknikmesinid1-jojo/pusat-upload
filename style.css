@@ -104,13 +104,11 @@ a:hover { color: var(--blue-dark); }
   display: grid; place-items: center; font: 700 15px/1 var(--font-cond); color: #fff;
 }
 .avatar-fallback.yt { background: #C4302B; }
-.avatar-fallback.ig { background: #8A3AB9; }
 .acct-body { min-width: 0; }
 .acct-name { margin: 0; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .acct-status { margin: 0; font-size: 14px; color: var(--muted); }
 .acct-status.ok { color: var(--ok); }
 .acct-status.bad { color: var(--bad); }
-.acct-pick select { margin-top: 6px; max-width: 100%; }
 .fine { margin: 12px 0 0; font-size: 13px; color: var(--muted); }
 
 /* Buttons */
@@ -164,6 +162,7 @@ a:hover { color: var(--blue-dark); }
 .toggle input { width: 20px; height: 20px; accent-color: var(--blue); margin: 0; }
 .dest.off .dest-body { display: none; }
 .dest-note { margin: 4px 0 12px; font-size: 14px; color: var(--muted); }
+.dest-note.flush { margin: 0; }
 .dest-body { display: grid; gap: 14px; margin-top: 6px; }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
@@ -177,14 +176,6 @@ input[type=text], input[type=datetime-local], textarea, select {
 }
 textarea { resize: vertical; min-height: 110px; }
 input:focus, textarea:focus, select:focus { border-color: var(--blue); }
-
-.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; width: fit-content; }
-.seg label { position: relative; }
-.seg input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
-.seg span { display: block; padding: 10px 18px; font-weight: 500; background: #FBFCFD; }
-.seg label + label span { border-left: 1px solid var(--line); }
-.seg input:checked + span { background: var(--blue); color: #fff; }
-.seg input:focus-visible + span { outline: 3px solid var(--blue); outline-offset: -3px; }
 
 /* Send + jobs */
 .hint { margin: 0 0 12px; padding: 10px 14px; border-radius: 6px; background: var(--blue-soft); color: var(--blue-dark); }
@@ -206,6 +197,10 @@ input:focus, textarea:focus, select:focus { border-color: var(--blue); }
 .job-msg.warn { color: var(--warn); background: var(--warn-soft); padding: 8px 10px; border-radius: 6px; }
 .job-msg.info { color: var(--muted); }
 .job-links { margin: 10px 0 0; display: flex; flex-wrap: wrap; gap: 16px; font-weight: 500; }
+.job-actions { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px; }
+.btn.primary-sm { background: var(--blue); color: #fff; }
+.btn.primary-sm:hover { background: var(--blue-dark); }
+.job:not(:has(.bar)) .job-head { margin-bottom: 0; }
 
 /* History */
 .history { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); }
@@ -226,6 +221,7 @@ input:focus, textarea:focus, select:focus { border-color: var(--blue); }
   .plate-spec div { padding: 6px 8px; }
   .acct { grid-template-columns: 40px 1fr; }
   .acct .btn { grid-column: 1 / -1; width: 100%; }
+  .job-actions .btn { width: 100%; }
   .avatar, .avatar-fallback { width: 40px; height: 40px; }
   .preview { grid-template-columns: 1fr; }
   .row { grid-template-columns: 1fr; }

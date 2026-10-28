@@ -31,7 +31,7 @@
   <p class="notice" id="setupNotice" role="status" hidden></p>
 
   <section class="step lockable" aria-labelledby="s1">
-    <h2 id="s1"><span class="num" aria-hidden="true">1</span>Hubungkan akun</h2>
+    <h2 id="s1"><span class="num" aria-hidden="true">1</span>Hubungkan YouTube</h2>
     <div class="accounts">
       <div class="acct" id="acctYt">
         <img class="avatar" id="ytAvatar" alt="" hidden>
@@ -42,21 +42,8 @@
         </div>
         <button type="button" class="btn ghost" id="ytConnect">Hubungkan</button>
       </div>
-      <div class="acct" id="acctIg">
-        <img class="avatar" id="igAvatar" alt="" hidden>
-        <span class="avatar-fallback ig" id="igAvatarFallback" aria-hidden="true">IG</span>
-        <div class="acct-body">
-          <p class="acct-name" id="igName">Instagram</p>
-          <p class="acct-status" id="igStatus">Belum terhubung</p>
-          <label class="acct-pick" id="igPickWrap" hidden>
-            <span class="sr-only">Pilih akun Instagram</span>
-            <select id="igPick"></select>
-          </label>
-        </div>
-        <button type="button" class="btn ghost" id="igConnect">Hubungkan</button>
-      </div>
     </div>
-    <p class="fine">Dengan menghubungkan YouTube, kamu menyetujui <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">Persyaratan Layanan YouTube</a> dan <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Kebijakan Privasi Google</a>.</p>
+    <p class="fine">Instagram nggak perlu dihubungkan. Postingnya lewat aplikasi Instagram di langkah 4. Dengan menghubungkan YouTube, kamu menyetujui <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">Persyaratan Layanan YouTube</a> dan <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Kebijakan Privasi Google</a>.</p>
   </section>
 
   <section class="step lockable" aria-labelledby="s2">
@@ -126,15 +113,11 @@
     <fieldset class="dest" id="igBox">
       <legend><label class="toggle"><input type="checkbox" id="igOn" checked> Kirim ke Instagram</label></legend>
       <div class="dest-body">
-        <div class="field">
-          <span class="label" id="igTypeLabel">Jenis post</span>
-          <div class="seg" id="igType" role="radiogroup" aria-labelledby="igTypeLabel"></div>
-        </div>
+        <p class="dest-note flush">Caption otomatis tersalin, lalu kamu yang memposting dari aplikasi Instagram. Reels, Feed, atau Story dipilih di sana, dan musik dari library IG tetap bisa dipakai.</p>
         <label class="field" id="igCaptionWrap">
           <span class="label">Caption <span class="count" id="igCapCount">0/2.200</span></span>
-          <textarea id="igCaption" rows="5" maxlength="2200"></textarea>
+          <textarea id="igCaption" rows="5" maxlength="2200" placeholder="Kosongkan untuk memakai judul dan deskripsi YouTube"></textarea>
         </label>
-        <p class="dest-note" id="igStoryNote" hidden>Story dari API nggak bisa pakai caption, stiker, atau musik.</p>
         <button type="button" class="link-btn" id="copyFromYt">Salin judul dan deskripsi YouTube ke caption</button>
       </div>
     </fieldset>

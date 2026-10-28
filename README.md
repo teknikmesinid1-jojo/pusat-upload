@@ -1,13 +1,10 @@
 # Pusat Upload
 
-Website statis untuk upload video dan foto ke YouTube dan Instagram sekaligus. Jalan sepenuhnya di browser, tanpa server, tanpa biaya.
+Website statis untuk upload video ke YouTube dan menyiapkan postingan Instagram dari satu form. Jalan sepenuhnya di browser, tanpa server, tanpa biaya.
+
+- YouTube: upload otomatis lewat YouTube Data API.
+- Instagram: caption otomatis tersalin, lalu file dibagikan lewat menu share HP atau Instagram dibuka di tab baru. Posting tetap dilakukan sendiri di aplikasi Instagram.
 
 ## Pengaturan
 
-Isi file config.js:
-
-- GOOGLE_CLIENT_ID: OAuth client ID (Web application) dari Google Cloud, dengan YouTube Data API v3 aktif.
-- META_APP_ID: App ID dari Meta for Developers.
-- META_CONFIG_ID: Configuration ID Facebook Login for Business (opsional).
-
-Semua nilai di atas adalah ID publik, bukan rahasia.
+Isi GOOGLE_CLIENT_ID di config.js dengan OAuth client ID (Web application) dari Google Cloud, dengan YouTube Data API v3 aktif. Nilai ini ID publik, bukan rahasia.
