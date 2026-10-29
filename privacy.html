@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kebijakan Privasi</title>
+<title>Kebijakan Privasi / Privacy Policy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
@@ -11,55 +11,112 @@
 <style>
   .doc h1 { font: 700 40px/1.1 var(--font-cond); margin: 8px 0 4px; }
   .doc h2 { font: 600 24px/1.2 var(--font-cond); margin: 32px 0 8px; }
-  .doc p, .doc li { max-width: 66ch; }
+  .doc h3 { font: 600 19px/1.3 var(--font-cond); margin: 24px 0 6px; }
+  .doc p, .doc li { max-width: 68ch; }
   .doc ul { padding-left: 20px; }
+  .doc li + li { margin-top: 4px; }
   .doc .updated { color: var(--muted); margin: 0; }
+  .doc .langs { display: flex; gap: 16px; margin: 16px 0 0; }
+  .doc .lang-block { margin-top: 36px; padding-top: 8px; border-top: 1px solid var(--line); }
 </style>
 </head>
 <body>
 <main class="wrap doc">
   <p><a href="./">Kembali ke Pusat Upload</a></p>
-  <h1>Kebijakan Privasi</h1>
-  <p class="updated">Berlaku sejak 28 Oktober 2026</p>
+  <h1>Kebijakan Privasi / Privacy Policy</h1>
+  <p class="updated">Pusat Upload, CV Anugerah Sukses Group. Diperbarui 29 Oktober 2026 / Updated 29 October 2026</p>
+  <p class="langs"><a href="#id">Bahasa Indonesia</a><a href="#en">English</a></p>
 
-  <p>Pusat Upload adalah alat internal milik CV Anugerah Sukses Group untuk mengunggah video ke YouTube dan menyiapkan postingan Instagram untuk akun milik kami sendiri. Website ini berjalan sepenuhnya di browser kamu dan tidak memiliki server.</p>
+  <section class="lang-block" id="id" lang="id">
+    <h2>Bahasa Indonesia</h2>
+    <p>Pusat Upload adalah alat internal milik CV Anugerah Sukses Group untuk mengunggah video ke channel YouTube milik kami sendiri dan menyiapkan postingan Instagram. Alat ini hanya dipakai oleh staf kami, berjalan sepenuhnya di browser, dan tidak memiliki server maupun database.</p>
 
-  <h2>Data yang diakses</h2>
-  <ul>
-    <li><strong>YouTube (Google):</strong> nama dan foto channel, serta izin untuk mengunggah video ke channel kamu. Akses ini memakai YouTube API Services.</li>
-    <li><strong>File yang kamu pilih:</strong> video atau foto yang kamu pilih untuk diunggah atau dibagikan.</li>
-  </ul>
-  <p>Website ini tidak terhubung ke akun Instagram atau Facebook kamu. Posting ke Instagram kamu lakukan sendiri lewat menu share perangkat atau aplikasi Instagram.</p>
+    <h3>Layanan API YouTube</h3>
+    <p>Pusat Upload memakai <strong>YouTube API Services</strong>. Dengan memakai fitur YouTube, kamu setuju terikat pada <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">Persyaratan Layanan YouTube</a>. Penggunaan data oleh Google diatur oleh <a href="http://www.google.com/policies/privacy" target="_blank" rel="noopener">Kebijakan Privasi Google</a>.</p>
 
-  <h2>Cara data dipakai</h2>
-  <p>Data di atas hanya dipakai untuk menampilkan channel yang terhubung dan mengunggah file yang kamu pilih ke YouTube. Kami tidak menjual, membagikan, atau memakai data ini untuk iklan.</p>
+    <h3>Data yang diakses</h3>
+    <ul>
+      <li>Lewat login Google (OAuth 2.0) dengan izin <em>youtube.upload</em> dan <em>youtube.readonly</em>: nama dan foto channel YouTube kamu (untuk menampilkan channel yang terhubung) serta izin mengunggah video ke channel tersebut.</li>
+      <li>File video yang kamu pilih, beserta judul, deskripsi, tag, kategori, visibilitas, dan jadwal tayang yang kamu isi.</li>
+      <li>Kami tidak mengakses data lain dari akun Google atau YouTube kamu.</li>
+    </ul>
 
-  <h2>Tempat data disimpan</h2>
-  <ul>
-    <li>Token login disimpan sementara di <em>sessionStorage</em> browser kamu dan hilang saat tab ditutup.</li>
-    <li>Riwayat upload dan pengaturan bawaan (tag, kategori) disimpan di <em>localStorage</em> browser kamu.</li>
-    <li>File dan token hanya dikirim langsung dari browser kamu ke Google (YouTube). Tidak ada pihak lain yang menerimanya.</li>
-  </ul>
+    <h3>Cara data dipakai dan dibagikan</h3>
+    <ul>
+      <li>Data hanya dipakai untuk menampilkan channel yang terhubung dan mengunggah video ke channel itu sesuai perintahmu.</li>
+      <li>File dan data dikirim langsung dari browser kamu ke Google/YouTube. Data tidak dikirim ke server kami (kami tidak punya server) atau ke pihak lain.</li>
+      <li>Kami tidak menjual, menyewakan, atau membagikan data kepada pihak internal maupun eksternal, dan tidak memakainya untuk iklan.</li>
+      <li>Tidak ada iklan atau konten dari pihak ketiga di Pusat Upload.</li>
+    </ul>
 
-  <h2 id="hapus-data">Mencabut akses dan menghapus data</h2>
-  <ul>
-    <li>Klik tombol <strong>Putuskan</strong> di halaman utama untuk memutus channel YouTube.</li>
-    <li>Cabut akses Google lewat <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">halaman izin akun Google</a>.</li>
-    <li>Hapus riwayat dan pengaturan dengan menghapus data situs ini di pengaturan browser kamu.</li>
-  </ul>
+    <h3>Penyimpanan di perangkat (cookie dan teknologi serupa)</h3>
+    <ul>
+      <li>Pusat Upload menyimpan data di browser kamu memakai <em>sessionStorage</em> dan <em>localStorage</em>, teknologi yang serupa dengan cookie.</li>
+      <li>Token akses Google serta nama dan foto channel disimpan di <em>sessionStorage</em> dan terhapus saat tab ditutup. Token kedaluwarsa dalam 1 jam.</li>
+      <li>Riwayat upload (nama file, waktu, link video YouTube, maksimal 20 terakhir) dan pengaturan bawaan (tag, kategori, visibilitas) disimpan di <em>localStorage</em> sampai kamu menghapusnya.</li>
+      <li>Layanan login Google Identity Services dapat memakai cookie Google sesuai Kebijakan Privasi Google.</li>
+      <li>Fitur Instagram memakai menu share di perangkat kamu. Pusat Upload tidak terhubung ke akun Instagram atau Facebook dan tidak mengakses data Meta.</li>
+    </ul>
 
-  <h2>Layanan pihak ketiga</h2>
-  <p>Dengan memakai fitur YouTube, kamu terikat pada <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">Persyaratan Layanan YouTube</a> dan <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Kebijakan Privasi Google</a>.</p>
+    <h3 id="hapus-data">Mencabut akses dan menghapus data</h3>
+    <ul>
+      <li>Klik tombol <strong>Putuskan</strong> di halaman utama untuk memutus channel dan mencabut token.</li>
+      <li>Cabut akses Pusat Upload kapan saja lewat <a href="https://security.google.com/settings/security/permissions" target="_blank" rel="noopener">halaman setelan keamanan Google</a>.</li>
+      <li>Hapus riwayat dan pengaturan dengan menghapus data situs ini di pengaturan browser kamu.</li>
+      <li>Karena kami tidak menyimpan data di server, tidak ada data kamu yang tersisa di pihak kami.</li>
+    </ul>
 
-  <h2 id="syarat">Syarat penggunaan</h2>
-  <ul>
-    <li>Alat ini hanya untuk mengunggah konten milik CV Anugerah Sukses Group ke akun resmi perusahaan.</li>
-    <li>Pengguna bertanggung jawab atas isi konten yang diunggah dan wajib mematuhi aturan YouTube dan Instagram.</li>
-    <li>Alat ini disediakan apa adanya tanpa jaminan ketersediaan.</li>
-  </ul>
+    <h3>Kontak</h3>
+    <p>CV Anugerah Sukses Group, Gading Griya Residence Blok B2 No. 16C, Sukapura, Cilincing, Jakarta Utara 14140, Indonesia. Hubungi kami lewat <a href="https://anugerahsuksesgroup.com/#kontak" target="_blank" rel="noopener">halaman kontak</a>.</p>
+  </section>
 
-  <h2>Kontak</h2>
-  <p>Pertanyaan soal privasi bisa dikirim lewat <a href="https://github.com/teknikmesinid1-jojo/pusat-upload/issues" target="_blank" rel="noopener">halaman Issues proyek ini</a>.</p>
+  <section class="lang-block" id="en" lang="en">
+    <h2>English</h2>
+    <p>Pusat Upload is an internal tool owned by CV Anugerah Sukses Group for uploading videos to our own YouTube channel and preparing Instagram posts. It is used only by our staff, runs entirely in the browser, and has no server or database.</p>
+
+    <h3>YouTube API Services</h3>
+    <p>Pusat Upload uses <strong>YouTube API Services</strong>. By using the YouTube features, you agree to be bound by the <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube Terms of Service</a>. Google's use of data is governed by the <a href="http://www.google.com/policies/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+
+    <h3>Information we access</h3>
+    <ul>
+      <li>Through Google sign-in (OAuth 2.0) with the <em>youtube.upload</em> and <em>youtube.readonly</em> scopes: your YouTube channel name and picture (to show which channel is connected) and permission to upload videos to that channel.</li>
+      <li>The video file you select, with the title, description, tags, category, privacy status and scheduled publish time you enter.</li>
+      <li>We do not access any other data from your Google or YouTube account.</li>
+    </ul>
+
+    <h3>How information is used and shared</h3>
+    <ul>
+      <li>Information is used only to show the connected channel and to upload videos to it when you ask.</li>
+      <li>Files and data are sent directly from your browser to Google/YouTube. They are not sent to our servers (we have none) or to anyone else.</li>
+      <li>We do not sell, rent or share information with internal or external parties, and we do not use it for advertising.</li>
+      <li>Pusat Upload shows no ads and no third-party content.</li>
+    </ul>
+
+    <h3>Storage on your device (cookies and similar technologies)</h3>
+    <ul>
+      <li>Pusat Upload stores data in your browser using <em>sessionStorage</em> and <em>localStorage</em>, technologies similar to cookies.</li>
+      <li>The Google access token and the channel name and picture are kept in <em>sessionStorage</em> and are removed when the tab closes. The token expires after 1 hour.</li>
+      <li>Upload history (file name, time and YouTube video link, last 20 items) and default settings (tags, category, privacy) are kept in <em>localStorage</em> until you clear them.</li>
+      <li>Google Identity Services, used for sign-in, may use Google cookies as described in the Google Privacy Policy.</li>
+      <li>The Instagram feature uses your device's share menu. Pusat Upload does not connect to Instagram or Facebook accounts and does not access Meta data.</li>
+    </ul>
+
+    <h3 id="delete-data">Revoking access and deleting data</h3>
+    <ul>
+      <li>Click <strong>Putuskan</strong> (Disconnect) on the main page to disconnect the channel and revoke the token.</li>
+      <li>Revoke Pusat Upload's access at any time on the <a href="https://security.google.com/settings/security/permissions" target="_blank" rel="noopener">Google security settings page</a>.</li>
+      <li>Delete history and settings by clearing this site's data in your browser settings.</li>
+      <li>Because we store no data on servers, none of your data remains with us.</li>
+    </ul>
+
+    <h3>Contact</h3>
+    <p>CV Anugerah Sukses Group, Gading Griya Residence Blok B2 No. 16C, Sukapura, Cilincing, North Jakarta 14140, Indonesia. Reach us through our <a href="https://anugerahsuksesgroup.com/#kontak" target="_blank" rel="noopener">contact page</a>.</p>
+  </section>
+
+  <footer class="foot">
+    <a href="./">Pusat Upload</a>
+    <a href="terms.html">Syarat penggunaan / Terms of Service</a>
+  </footer>
 </main>
 </body>
 </html>

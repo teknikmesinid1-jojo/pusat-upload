@@ -212,7 +212,7 @@ input:focus, textarea:focus, select:focus { border-color: var(--blue); }
 .h-meta { margin: 2px 0 0; font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 14px; }
 .history .empty { color: var(--muted); }
 
-.foot { margin-top: 40px; display: flex; gap: 20px; font-size: 14px; }
+.foot { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14px; }
 
 @media (max-width: 560px) {
   .wrap { padding-top: 16px; }
